@@ -293,8 +293,6 @@ export class DialogRenderer {
 
     let stopPropagation = (e) => { e._aureliaDialogHostClicked = true; };
 
-    let dialogHost = modalContainer.querySelector('ai-dialog');
-
     dialogController.showDialog = () => {
       if (!this.dialogControllers.length) {
         DOM.addEventListener('keyup', this.escapeKeyEvent);
@@ -311,7 +309,7 @@ export class DialogRenderer {
       }
 
       modalContainer.addEventListener('click', closeModalClick);
-      dialogHost.addEventListener('click', stopPropagation);
+      anchor.addEventListener('click', stopPropagation);
 
       return new Promise((resolve) => {
         modalContainer.addEventListener(transitionEvent(), onTransitionEnd);
@@ -332,7 +330,7 @@ export class DialogRenderer {
 
     dialogController.hideDialog = () => {
       modalContainer.removeEventListener('click', closeModalClick);
-      dialogHost.removeEventListener('click', stopPropagation);
+      anchor.removeEventListener('click', stopPropagation);
 
       let i = this.dialogControllers.indexOf(dialogController);
       if (i !== -1) {

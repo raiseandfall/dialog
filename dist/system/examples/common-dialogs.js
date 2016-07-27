@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['./prompt', '../dialog-service'], function (_export, _context) {
+  "use strict";
+
   var Prompt, DialogService, _class, _temp, CommonDialogs;
 
   function _classCallCheck(instance, Constructor) {

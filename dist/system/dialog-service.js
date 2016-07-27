@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['aurelia-metadata', 'aurelia-dependency-injection', 'aurelia-templating', './dialog-controller', './renderers/renderer', './lifecycle'], function (_export, _context) {
+  "use strict";
+
   var Origin, Container, CompositionEngine, ViewSlot, DialogController, Renderer, invokeLifecycle, _class, _temp, DialogService;
 
   function _classCallCheck(instance, Constructor) {

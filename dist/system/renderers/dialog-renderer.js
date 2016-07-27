@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['../dialog-options', 'aurelia-pal', 'aurelia-dependency-injection'], function (_export, _context) {
+  "use strict";
+
   var dialogOptions, DOM, transient, _dec, _class, containerTagName, overlayTagName, transitionEvent, DialogRenderer;
 
   function _classCallCheck(instance, Constructor) {
@@ -113,8 +115,6 @@ System.register(['../dialog-options', 'aurelia-pal', 'aurelia-dependency-injecti
             e._aureliaDialogHostClicked = true;
           };
 
-          var dialogHost = modalContainer.querySelector('ai-dialog');
-
           dialogController.showDialog = function () {
             if (!_this2.dialogControllers.length) {
               DOM.addEventListener('keyup', _this2.escapeKeyEvent);
@@ -131,7 +131,7 @@ System.register(['../dialog-options', 'aurelia-pal', 'aurelia-dependency-injecti
             }
 
             modalContainer.addEventListener('click', closeModalClick);
-            dialogHost.addEventListener('click', stopPropagation);
+            anchor.addEventListener('click', stopPropagation);
 
             return new Promise(function (resolve) {
               modalContainer.addEventListener(transitionEvent(), onTransitionEnd);
@@ -152,7 +152,7 @@ System.register(['../dialog-options', 'aurelia-pal', 'aurelia-dependency-injecti
 
           dialogController.hideDialog = function () {
             modalContainer.removeEventListener('click', closeModalClick);
-            dialogHost.removeEventListener('click', stopPropagation);
+            anchor.removeEventListener('click', stopPropagation);
 
             var i = _this2.dialogControllers.indexOf(dialogController);
             if (i !== -1) {

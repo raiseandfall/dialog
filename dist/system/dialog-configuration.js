@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['./renderers/renderer', './renderers/dialog-renderer', './dialog-options'], function (_export, _context) {
+  "use strict";
+
   var Renderer, DialogRenderer, dialogOptions, defaultRenderer, resources, DialogConfiguration;
 
   function _classCallCheck(instance, Constructor) {

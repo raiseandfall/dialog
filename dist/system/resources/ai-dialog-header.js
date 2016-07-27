@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['aurelia-templating', '../dialog-controller'], function (_export, _context) {
+  "use strict";
+
   var customElement, DialogController, _dec, _class, _class2, _temp, AiDialogHeader;
 
   function _classCallCheck(instance, Constructor) {

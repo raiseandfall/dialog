@@ -1,28 +1,30 @@
 'use strict';
 
 System.register([], function (_export, _context) {
-  return {
-    setters: [],
-    execute: function () {
-      function invokeLifecycle(instance, name, model) {
-        if (typeof instance[name] === 'function') {
-          var result = instance[name](model);
+  "use strict";
 
-          if (result instanceof Promise) {
-            return result;
-          }
+  function invokeLifecycle(instance, name, model) {
+    if (typeof instance[name] === 'function') {
+      var result = instance[name](model);
 
-          if (result !== null && result !== undefined) {
-            return Promise.resolve(result);
-          }
-
-          return Promise.resolve(true);
-        }
-
-        return Promise.resolve(true);
+      if (result instanceof Promise) {
+        return result;
       }
 
-      _export('invokeLifecycle', invokeLifecycle);
+      if (result !== null && result !== undefined) {
+        return Promise.resolve(result);
+      }
+
+      return Promise.resolve(true);
     }
+
+    return Promise.resolve(true);
+  }
+
+  _export('invokeLifecycle', invokeLifecycle);
+
+  return {
+    setters: [],
+    execute: function () {}
   };
 });

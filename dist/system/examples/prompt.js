@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['../dialog-controller'], function (_export, _context) {
+  "use strict";
+
   var DialogController, _class, _temp, Prompt;
 
   function _classCallCheck(instance, Constructor) {

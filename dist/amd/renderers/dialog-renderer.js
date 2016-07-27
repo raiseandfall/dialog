@@ -101,8 +101,6 @@ define(['exports', '../dialog-options', 'aurelia-pal', 'aurelia-dependency-injec
         e._aureliaDialogHostClicked = true;
       };
 
-      var dialogHost = modalContainer.querySelector('ai-dialog');
-
       dialogController.showDialog = function () {
         if (!_this2.dialogControllers.length) {
           _aureliaPal.DOM.addEventListener('keyup', _this2.escapeKeyEvent);
@@ -119,7 +117,7 @@ define(['exports', '../dialog-options', 'aurelia-pal', 'aurelia-dependency-injec
         }
 
         modalContainer.addEventListener('click', closeModalClick);
-        dialogHost.addEventListener('click', stopPropagation);
+        anchor.addEventListener('click', stopPropagation);
 
         return new Promise(function (resolve) {
           modalContainer.addEventListener(transitionEvent(), onTransitionEnd);
@@ -140,7 +138,7 @@ define(['exports', '../dialog-options', 'aurelia-pal', 'aurelia-dependency-injec
 
       dialogController.hideDialog = function () {
         modalContainer.removeEventListener('click', closeModalClick);
-        dialogHost.removeEventListener('click', stopPropagation);
+        anchor.removeEventListener('click', stopPropagation);
 
         var i = _this2.dialogControllers.indexOf(dialogController);
         if (i !== -1) {

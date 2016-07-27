@@ -1,6 +1,8 @@
 'use strict';
 
 System.register(['./lifecycle'], function (_export, _context) {
+  "use strict";
+
   var invokeLifecycle, DialogController, DialogResult;
 
   function _classCallCheck(instance, Constructor) {

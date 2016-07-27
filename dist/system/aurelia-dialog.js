@@ -1,7 +1,22 @@
 'use strict';
 
 System.register(['./dialog-configuration', './resources/ai-dialog', './resources/ai-dialog-header', './resources/ai-dialog-body', './resources/ai-dialog-footer', './resources/attach-focus', './dialog-service', './dialog-controller'], function (_export, _context) {
+  "use strict";
+
   var DialogConfiguration;
+  function configure(aurelia, callback) {
+    var config = new DialogConfiguration(aurelia);
+
+    if (typeof callback === 'function') {
+      callback(config);
+      return;
+    }
+
+    config.useDefaults();
+  }
+
+  _export('configure', configure);
+
   return {
     setters: [function (_dialogConfiguration) {
       DialogConfiguration = _dialogConfiguration.DialogConfiguration;
@@ -46,19 +61,6 @@ System.register(['./dialog-configuration', './resources/ai-dialog', './resources
 
       _export(_exportObj8);
     }],
-    execute: function () {
-      function configure(aurelia, callback) {
-        var config = new DialogConfiguration(aurelia);
-
-        if (typeof callback === 'function') {
-          callback(config);
-          return;
-        }
-
-        config.useDefaults();
-      }
-
-      _export('configure', configure);
-    }
+    execute: function () {}
   };
 });
